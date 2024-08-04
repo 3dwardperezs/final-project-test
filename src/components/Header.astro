@@ -1,0 +1,36 @@
+---
+import '../styles/style.css';
+---
+
+<header class="py8 px4 mx-auto max-w-xl lg:py-16 lg:px-6">
+    <div class="mx-auto text-center mb-8 lg:mb-16">
+        <h2 class="mb-4 text-5xl tracking-tight font-extrabold text-white">
+            My🚀Space 
+        </h2>
+        <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+            All you need for disconnect
+        </p>
+    </div>
+
+    <nav class="flex flex-col items-center justify-between w-full text-center md:flex-row mx-auto">
+        <button class="buttonHeader " data-href="/">Home</button>
+        <button class="buttonHeader" data-href="/MoviePage">Movies</button>
+        <button class="buttonHeader" data-href="/WeatherDetailsPage">Weather</button>
+        <button class="buttonHeader" data-href="/InteractiveMapPage">Location</button>
+        <button class="buttonHeader" data-href="/TaskManagerPage">Tasks</button>
+        <button class="buttonHeader" data-href="/GithubRepoSearchPage">Repository</button>
+    </nav>
+
+</header>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('button[data-href]').forEach(button => {
+            button.addEventListener('click', () => {
+                const href = button.getAttribute('data-href');
+                if (href !== null) {
+                window.location.href = href;
+            }
+            });
+        });
+    });
+</script>

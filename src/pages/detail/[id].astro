@@ -1,0 +1,27 @@
+---
+import Layout from "@layouts/Layout.astro"
+const { id } = Astro.params;
+const response = await fetch("https://api.themoviedb.org/3/movie/"+id+"?api_key=6050d678a0f95f2618b79d83c9dbc3d8&language=en-US");
+const data = await response.json();
+const poster_url = "https://image.tmdb.org/t/p/w500/";
+---
+<Layout title="detail movie">
+    <!-- Getting the movie details -->
+    <div class="flex-max-w-lg w-full overflow-hidden mx-auto p-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="flex flex-col items-left">
+                <img src={poster_url + data.poster_path} alt="poster" class="img-fluid rounded-start"/>
+            </div>
+            <div class="flex flex-col items-left text-white">
+                <h1><span class="my-2 text-2xl font-bold tracking-tight text-white">{data.title}</span></h1>
+                <h4>{data.tagline}</h4>
+                <h2 class="font-bold">Overview:</h2>
+                <p>{data.overview}</p>
+                <h2 class="font-bold">Release Date:</h2>
+                <p><span class="badge text-bg-secondary">{data.release_date}</span></p>
+                <h2 class="font-bold">Rate:</h2>
+                <h1><span class="badge text-bg-dark">{Math.round(data.vote_average)}⭐</span></h1>
+            </div>
+        </div>
+    </div>
+</Layout>

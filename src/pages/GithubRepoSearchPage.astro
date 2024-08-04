@@ -1,0 +1,12 @@
+---
+import Layout from "@layouts/Layout.astro"
+import GithubRepoSearch from "@components/GithubRepoSearch.svelte"
+---
+<Layout title="Terms Of Service">
+   <body class="bg-gray-100 text-gray-900">   
+      <h1 class="text-3xl font-bold text-center my-8 text-white">GitHub Repository Explorer</h1>  
+      <!-- Calling the github repository component -->
+      <GithubRepoSearch client:load/>
+   </body>   
+</Layout>
+

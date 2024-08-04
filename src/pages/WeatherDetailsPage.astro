@@ -1,0 +1,10 @@
+---
+import Layout from "@layouts/Layout.astro"
+import WeatherDashboard from '@components/WeatherDashboard.svelte';
+---
+<Layout title="Weather">
+    <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+        <!-- Calling the weather dashboard component -->
+        <WeatherDashboard client:load/>
+    </body>
+</Layout>

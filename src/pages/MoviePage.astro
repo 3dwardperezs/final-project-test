@@ -1,0 +1,11 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Movies from '@components/Movies.astro';
+import SearchMovie from '@components/SearchMovie.svelte';
+---
+<Layout title="Movies">
+   <!-- Calling the search movie component -->
+   <SearchMovie client:load/>
+   <!-- Calling movie component -->
+   <Movies/>
+</Layout>

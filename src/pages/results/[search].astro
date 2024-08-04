@@ -1,0 +1,34 @@
+---
+import Layout from "@layouts/Layout.astro"
+import SearchMovie from "@components/SearchMovie.svelte"
+const { search } = Astro.params;
+const response = await fetch("https://api.themoviedb.org/3/search/movie?api_key=6050d678a0f95f2618b79d83c9dbc3d8&language=en-US&query="+search+"&page=1&include_adult=false")
+const data = await response.json();
+const detail = "/detail/";
+const poster_url = "https://image.tmdb.org/t/p/w500/";
+---
+<Layout title="Movies">
+    <!-- Showing the search bar movie -->
+    <SearchMovie client:load/>
+    <!-- Getting the movies -->
+    <div class="grid gap-8 sm:grid-cols-3 lg:grid-col-3">
+        {
+            data.results.map((item) => (
+                <a href={detail + item.id} class="rounded-lg border shadow-md bg-gray-800 border-gray-700 hover:scale-105 hover:bg-gray-700 hover:border-gray-500 transition flex flex-col">
+                    <picture class="flex justify-center p-4">
+                        <img class="mb-5 rounded-lg" src={poster_url + item.poster_path} alt='poster'>
+    
+                    </picture>
+                    <header class="p-4 flex-grow">
+                        <h2 class="my-2 text-2xl font-bold tracking-tight text-white">
+                            {item.title}
+                        </h2>
+                        <p class="mb-4 font-light text-gray-400">
+                            {item.overview} 
+                        </p>
+                    </header>
+                </a>
+            ))
+        }
+    </div>
+</Layout>
