@@ -9,7 +9,5 @@ export default defineConfig({
     svelte(),
   ],
   output: "server",
-  site: 'https://3dwardperezs.github.io',
-  base: 'final-project-test',
-  adapter: netlify(),
+  adapter: netlify()
 });
