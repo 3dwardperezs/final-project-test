@@ -39,7 +39,7 @@
 </form>
 
 <div class="items-center">
-    <img src="/logoGitHub.webp" alt="404 Image" class="mx-auto mb-6 w-2/2 max-w-xs"/>
+    <img src="/imagenes/logoGitHub.webp" alt="404 Image" class="mx-auto mb-6 w-2/2 max-w-xs"/>
 </div>
 <!-- Loading text -->  
 {#if loading}

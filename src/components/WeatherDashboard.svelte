@@ -58,6 +58,33 @@
      event.preventDefault();
      fetchWeather();
    }
+   /* Method for changing imagenes depending description variable*/
+   function getImageForDescription(description) {
+      if (!description) return 'path/to/default-weather.jpg';
+      switch(description.toLowerCase()) {
+         case 'clear sky':
+            return '/imagenes/warm.png';
+         case 'few clouds':
+            return '/imagenes/warm-cloud.png';
+         case 'scattered clouds':
+            return '/imagenes/few-clouds.png';
+         case 'broken clouds':
+            return '/imagenes/scattered-clouds.png';
+         case 'shower rain':
+            return '/imagenes/heavy-rain.png';
+         case 'rain':
+            return '/imagenes/rain.png';
+         case 'thunderstorm':
+            return '/imagenes/thunderstorm.png';
+         case 'snow':
+            return '/imagenes/snow.png';
+         case 'mist':
+            return '/imagenes/thunderstorm.png';
+         default:
+            return '/imagenes/thunderstorm.png';
+      }
+   }
+
 </script>
 <!-- Searching panel -->
 <form on:submit={handleSearch} class="flex-max-w-lg mx-auto p-4 bg-white shadow-md rounded-lg mb-6">
@@ -84,7 +111,7 @@
          <p class="text-4xl font-semibold">{weatherName},{country}</p> 
          <p class="text-sm">{Description}</p>
          <picture>
-           <img class="w-40 h-40 rounded-full" src={pictureWeather} alt={temporizador} />
+           <img src={getImageForDescription(Description)} alt={Description} class="w-full" />
          </picture>
          <h1 class="text-5xl font-semibold">{temporizador}</h1>
       </div>
