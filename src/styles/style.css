@@ -1,5 +1,4 @@
 /* Styling for header*/
-
 .buttonHeader {
   display: flex;
   flex-direction: row;
@@ -28,16 +27,6 @@
     transform: scale(1.1); 
     opacity: 1; 
 }
-
-/*.buttonHeader:focus {
-    ring: 4px solid rgba(29, 161, 242, 0.5); /* focus:ring-[#1da1f2]/50 
-    outline: none;
-}
-
-.buttonHeader:focus.dark {
-    ring: 4px solid rgba(29, 161, 242, 0.55); /* dark:focus:ring-[#1da1f2]/55 
-}*/
-
 .buttonHeader.scale-90 {
     transform: scale(0.9); 
 }
