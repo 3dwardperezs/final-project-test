@@ -108,7 +108,6 @@
 <div class="Flex-max-w-lg w-full rounded overflow-hidden shadow-lg bg-white mx-auto p-4">
    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       <div class="flex flex-col items-center sm:items-start">
-         <p class="text-4xl font-semibold">{weatherName},{country}</p> 
          <p class="text-sm">{Description}</p>
          <picture>
            <img src={getImageForDescription(Description)} alt={Description} class="w-full" />
@@ -116,7 +115,7 @@
          <h1 class="text-5xl font-semibold">{temporizador}</h1>
       </div>
    
-   <div class="flex flex-col sm:flex-row md:flex-col items-center sm:items-start">
+    <div class="flex flex-col sm:flex-row md:flex-col items-center sm:items-start">
       <h1 class="text-3xl font-semibold mb-2">Temperature Details:</h1>
       <div class="flex flex-col items-center sm:items-start">
           <div class="flex items-center">

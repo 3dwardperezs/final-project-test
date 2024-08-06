@@ -23,22 +23,13 @@ import '../styles/style.css';
      crossorigin=""/>
 		<title>{title}</title>
 	</head>
-
-	<body class="bg-gray-900 min-h-screen pg-32">
+	<body class="bg-gray-900 min-h-screen flex flex-col items-center justify-center">
 		<Header/>
 		<main class="max-w-5xl px-4 m-auto">
 			<slot />
 		</main>
 		<Footer/>
+		<IconHelp/>
 	</body>
-	<IconHelp/>
 </html>
-<!-- <style is:global>
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-		color-scheme: dark light;
-	}
-	
-</style>-->
+
